@@ -8,3 +8,6 @@ Mobile robotic platform made from CTC 3D printer parts
 Part 1 Chassis, completed 9 July 2023
 
 Part 2 Drive Electronics, complete 15 July 2023
+
+https://youtube.com/shorts/3ybkzSui_iU
+
