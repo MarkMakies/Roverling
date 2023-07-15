@@ -1,4 +1,7 @@
 # Roverling
+
+![IMG_0746](https://github.com/MarkMakies/Roverling/assets/105891859/041a1826-9d6a-44dc-8815-bac312036ee0)
+
 Mobile robotic platform made from CTC 3D printer parts
 
 # WORK IN PROGRESS
