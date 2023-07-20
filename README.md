@@ -5,8 +5,8 @@ Mobile robotic platform made from CTC 3D printer parts
 ![IMG_0746](https://github.com/MarkMakies/Roverling/assets/105891859/041a1826-9d6a-44dc-8815-bac312036ee0)
 Part 1 Chassis, completed 9 July 2023
 
-![Schematic](https://github.com/MarkMakies/Roverling/assets/105891859/29faf124-cbcc-4838-8da7-ae6813dc1be9)
-Part 2 Drive Electronics, complete 15 July 2023
+[schematic102.pdf](https://github.com/MarkMakies/Roverling/files/12101609/schematic102.pdf)
+Part 2 Drive Electronics, complete 20 July 2023
 
 # In action
 https://youtube.com/shorts/3ybkzSui_iU
