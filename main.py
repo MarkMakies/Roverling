@@ -89,8 +89,8 @@ def SetVel(i, vel, accel):
         PWMstep[i] = int(StepsPerM * Vstep[i])    # delta signed PWM per period
 
         #print('TimeToTarget', TimeToTarget, 'NumStepsReqd', NumStepsReqd)
-        print(i, 'Vcur', Vcur[i], 'Vtarget', Vtarget[i], 'Vstep', Vstep[i], 
-            'PWMstep', PWMstep[i], 'PWMtarget', PWMtarget[i])
+        #print(i, 'Vcur', Vcur[i], 'Vtarget', Vtarget[i], 'Vstep', Vstep[i], 
+        #      'PWMstep', PWMstep[i], 'PWMtarget', PWMtarget[i])
 
 def SetCurrentmA(mA):
     #  Current Limit in mA.  250mA ~ 1000mA  multiplier = 65   
@@ -129,7 +129,7 @@ def cbMotionTimer(MotionTimer):
                 
                 Vcur[i] = PWMcur[i] / StepsPerM # update current velocity
 
-            if i == 0: print('freq',mSTEP[i].freq(),'duty',mSTEP[i].duty_u16())
+            #if i == 0: print('freq',mSTEP[i].freq(),'duty',mSTEP[i].duty_u16())
 
 ################################################################################
 
@@ -158,23 +158,31 @@ RCaccel = 0.6
 while True:
     sleep_ms(100)
 
+    if GetRC(6) > 50:
+        for i in range(4): mEN[i].off()
+    else:
+        for i in range(4): mEN[i].on()
+
     midVel = RCmaxVel * (GetRC(1) / 100)
-    offset = (GetRC(4) - 50)/100     # range -0.5 ~ +0.5
-    leftVel =  midVel + (offset * midVel)   # basically +/- 50%
-    rightVel = midVel - (offset * midVel)
-    print(leftVel, rightVel)
-    if GetRC(5) > 50:
+    offset = RCmaxVel * (GetRC(2) - 50) / 100     # range -0.5 ~ +0.5
+    
+    if midVel != 0:    
+        if offset > 0:
+            leftVel =  midVel + offset
+            rightVel = midVel
+        else:
+            leftVel = midVel
+            rightVel = midVel - offset
+    else:
+        leftVel = offset
+        rightVel = -offset
+
+    if GetRC(5) > 50:   # GEAR switch = reverse
         leftVel = -leftVel
         rightVel = -rightVel        
 
-
-    if GetRC(1) > 10:
-        SetVel(0, leftVel, RCaccel)
-        SetVel(1, rightVel, RCaccel)
-        SetVel(2, leftVel, RCaccel)
-        SetVel(3, rightVel, RCaccel)
-    else:   # emerg brake
-        SetVel(0, 0, 30)
-        SetVel(1, 0, 30)
-        SetVel(2, 0, 30)
-        SetVel(3, 0, 30)
+    print(leftVel, rightVel)
+    SetVel(0, leftVel, RCaccel)
+    SetVel(1, rightVel, RCaccel)
+    SetVel(2, leftVel, RCaccel)
+    SetVel(3, rightVel, RCaccel)
