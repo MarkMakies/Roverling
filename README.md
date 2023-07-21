@@ -1,15 +1,12 @@
-# Roverling - a work in progress
+# Roverling
 Mobile robotic platform made from CTC 3D printer parts
 
 ![Drawing](https://github.com/MarkMakies/Roverling/assets/105891859/4d358d1e-91db-4598-bae2-dbf974f5846d)
-![IMG_0746](https://github.com/MarkMakies/Roverling/assets/105891859/041a1826-9d6a-44dc-8815-bac312036ee0)
-Part 1 Chassis, completed 9 July 2023
+![IMG_5540](https://github.com/MarkMakies/Roverling/assets/105891859/ff17a2c7-e7e2-472b-b499-f1fad9f44d8d)
+![Screenshot_2023-07-22_09-04-26](https://github.com/MarkMakies/Roverling/assets/105891859/974d9daa-c4a8-45c2-a039-f8645ab0e34e)
 
-![schematic102.pdf](https://github.com/MarkMakies/Roverling/files/12101636/schematic102.pdf)
-
-Part 2 Drive Electronics, complete 20 July 2023
 
 # In action
 https://youtube.com/shorts/3ybkzSui_iU
 
-Part 3 - In progress
+# Build tutorial on its way ....
